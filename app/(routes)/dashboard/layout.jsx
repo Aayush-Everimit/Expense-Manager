@@ -5,23 +5,19 @@ export default function DashboardLayout({ children }) {
     return (
         <div className="flex h-screen">
 
-            {/* SIDEBAR */}
-            <div className="hidden md:block w-64">
+            {/* SIDEBAR — desktop only */}
+            <div className="hidden md:block w-64 shrink-0">
                 <SideNav />
             </div>
 
             {/* RIGHT SIDE */}
-            <div className="flex-1 flex flex-col">
-
-                {/* HEADER */}
+            <div className="flex-1 flex flex-col min-w-0">
                 <DashboardHeader />
-
-                {/* CONTENT */}
-                <main className="flex-1 p-6 bg-gray-50 overflow-auto">
+                <main className="flex-1 p-4 md:p-6 bg-gray-50 overflow-auto">
                     {children}
                 </main>
-
             </div>
+
         </div>
     );
 }
